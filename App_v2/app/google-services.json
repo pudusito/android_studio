@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870664268358",
+    "project_id": "app-v2-bb1b6",
+    "storage_bucket": "app-v2-bb1b6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870664268358:android:fd6d959e6262a563c03847",
+        "android_client_info": {
+          "package_name": "cl.maldonado.app_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAGEggBS_86fajT6KCDZxxnXtVv03UU70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

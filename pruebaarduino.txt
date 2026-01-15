@@ -1,0 +1,130 @@
+#include "BluetoothSerial.h"
+
+String device_name = "ESP32-PUDU";
+
+// Verificaciones Bluetooth
+#if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
+#error Bluetooth is not enabled!
+#endif
+
+#if !defined(CONFIG_BT_SPP_ENABLED)
+#error Bluetooth SPP is not enabled
+#endif
+
+BluetoothSerial SerialBT;
+
+// Pines
+#define LED1 25
+#define LED2 26
+#define LED3 27
+#define BUZZER 33
+
+// ---------- CONTROL LEDs ----------
+bool secuenciaActiva = false;
+unsigned long tiempoLED = 0;
+int paso = 0;
+const unsigned long intervaloLED = 1000;
+
+// ---------- NOTAS MUSICALES ----------
+#define NOTE_E5 659
+#define NOTE_G5 784
+#define NOTE_C5 523
+#define NOTE_D5 587
+
+int melodia[] = {
+  NOTE_E5, NOTE_E5, NOTE_E5,
+  NOTE_E5, NOTE_E5, NOTE_E5,
+  NOTE_E5, NOTE_G5, NOTE_C5, NOTE_D5,
+  NOTE_E5
+};
+
+int duraciones[] = {
+  200, 200, 400,
+  200, 200, 400,
+  200, 200, 200, 200,
+  600
+};
+
+int totalNotas = sizeof(melodia) / sizeof(int);
+
+// ---------- CONTROL CANCIÓN ----------
+unsigned long tiempoNota = 0;
+int notaActual = 0;
+bool cancionActiva = false;
+
+void setup() {
+  Serial.begin(115200);
+  SerialBT.begin(device_name);
+
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(BUZZER, OUTPUT);
+
+  apagarTodo();
+}
+
+void loop() {
+
+  // -------- BLUETOOTH --------
+  if (SerialBT.available()) {
+    char dato = SerialBT.read();
+
+    if (dato == '1') {
+      secuenciaActiva = true;
+      cancionActiva = true;
+      paso = 0;
+      notaActual = 0;
+      tiempoLED = millis();
+      tiempoNota = millis();
+    }
+
+    if (dato == '0') {
+      secuenciaActiva = false;
+      cancionActiva = false;
+      apagarTodo();
+    }
+  }
+
+  // -------- SECUENCIA LEDs --------
+  if (secuenciaActiva && millis() - tiempoLED >= intervaloLED) {
+    tiempoLED = millis();
+    cambiarLuz();
+  }
+
+  // -------- CANCIÓN NAVIDAD (LOOP) --------
+  if (cancionActiva && millis() - tiempoNota >= duraciones[notaActual]) {
+    tiempoNota = millis();
+
+    tone(BUZZER, melodia[notaActual]);
+
+    notaActual++;
+    if (notaActual >= totalNotas) {
+      notaActual = 0; // 🔁 repetir canción
+    }
+  }
+}
+
+// ---------------- FUNCIONES ----------------
+
+void cambiarLuz() {
+  apagarLeds();
+
+  if (paso == 0) digitalWrite(LED1, HIGH);
+  if (paso == 1) digitalWrite(LED2, HIGH);
+  if (paso == 2) digitalWrite(LED3, HIGH);
+
+  paso++;
+  if (paso > 2) paso = 0;
+}
+
+void apagarLeds() {
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, LOW);
+}
+
+void apagarTodo() {
+  apagarLeds();
+  noTone(BUZZER);
+}

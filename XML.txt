@@ -1,0 +1,110 @@
+
+
+
+----------------------------------------------------
+ Lenguaje de Marcado Extensible (XML)
+----------------------------------------------------
+
+XML (eXtensible Markup Language) es un lenguaje de etiquetado estructurado, similar a HTML, pero con un propósito diferente.
+
+- HTML define cómo se muestra la información.  
+- XML define qué información es y cómo se organiza.
+
+----------------------------------------------------
+ Estructura básica de XML
+----------------------------------------------------
+
+XML utiliza etiquetas (tags) para describir los datos.  
+Estas etiquetas son definidas por el usuario.
+
+Ejemplos de estructura:
+
+Cierre completo:
+<textview>
+</textview>
+
+Cierre rápido (autocierre):
+<textview />
+
+----------------------------------------------------
+ Atributos
+----------------------------------------------------
+
+Las etiquetas pueden incluir atributos que agregan información adicional.
+
+Ejemplo:
+<textview android:layout_text="Hola" />
+
+En este caso:
+- "android:layout_text" es un atributo.  
+- "Hola" es su valor.
+
+----------------------------------------------------
+ Contenedores
+----------------------------------------------------
+
+Los contenedores agrupan y organizan otros elementos.  
+Son comunes en estructuras como interfaces Android.
+
+Ejemplos:
+
+<LinearLayout>
+    <TextView />
+</LinearLayout>
+
+<RelativeLayout>
+    <Button />
+</RelativeLayout>
+
+- LinearLayout: organiza los elementos en fila o columna.  
+- RelativeLayout: posiciona los elementos en relación unos con otros.
+
+----------------------------------------------------
+ Comentario final
+----------------------------------------------------
+
+XML es:
+- Flexible (puedes definir tus propias etiquetas).  
+- Legible por humanos y máquinas.  
+- Muy usado para configuraciones, almacenamiento de datos e interfaces (por ejemplo, en Android).
+
+----------------------------------------------------
+ Lenguajes y DSL
+----------------------------------------------------
+
+Lenguaje:
+- Kotlin → usa Kotlin DSL
+- Java → usa Groovy DSL
+
+----------------------------------------------------
+ Profe Tips
+----------------------------------------------------
+
+A medida que se va avanzando en la app, es recomendable generar una APK, 
+ya que no se puede crear una APK si el código fuente contiene errores.
+
+----------------------------------------------------
+ Formas de ejecutar el código.
+----------------------------------------------------
+
+1) Desde el teléfono personal en modo desarrollador:
+ en mi telefono:  
+-buscar la opcion numero de compilacion: tocar 7 veces para volverse desarrollador.
+-activar depuracion por USB(solo cuando trabajamos con android estudio activar esta opcion)
+
+tools > select device
+
+2) Virtualización de teléfono con Android Studio:
+   tools > device manager > + > create virtual device > pixel 2
+
+3) contruir la apk para tener el archivo fisico:
+  build > generate app bundles or apks > generate apks
+
+pd: no se puede ver el codigo fuente de un apk
+
+
+pd: sacar rapidamente la apk, ir a /app : open in > explorer
+- C:\Users\Usuario\Desktop\AppV12025\app\build\outputs\apk\debug
+
+
+

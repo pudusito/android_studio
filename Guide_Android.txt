@@ -1,0 +1,112 @@
+herramientas multiplataforma:
+
+android studio
+flutter
+onix
+react native
+kotlin
+
+------------------------
+android estudio
+------------------------
+
+sintaxis LinearLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOLA MUNDO"
+                android:textSize="30sp">
+
+            </TextView>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+añadir imagenes 
+click derecho en drawable  > open in > explorer
+seleccionamos la imagen.
+recomendado para imagenes de fondo: imagenes blur
+
+https://www.topster.es/imagenes-redondas/ 
+
+
+icono estan en la carpeta manifest > androidmanifest > aplication buscar icon y roundIcon (recomendado usar icono redondo para responsive de pantallas)
+
+
+para crear un projecto lo creamos con el empy project with view
+
+al crear ponemos una orientacion y cambiamos el primer bloque por un linearlayout.
+
+VAR: Variable
+VAL: value
+windows+. para poner iconos
+
+right click app > new > activity > gallery
+
+para ejecutar , menu, tools, device manager
+
+
+
+________________________________________--
+
+y en la nueva activity que se encuentra en layout
+modificamos la primera linea y la cambiamos por un Linearlayout y dentro le damos orientacion.
+
+luego ya podemos empezar a crear linearlayout
+
+
+subir img a drawable con click derecho, open in , explorer, arrastrar a carpeta
+
+recordar siempre en la clase de la app > klin + java > layout1. eliminamos el viewcompat
+
+
+para crear nueva carpeta en res.
+en rews, new , new resource directory.
+(CREAMOS UNA CARPETA RAW PARA AUDIO)
+nombre directorio en formato raw
+
+para activar el modo desarrollador en el telefono fisico, ajustes>acerca de > informacion de software > clickear 7 veces en numero de compilacion
+luego en ajustes>opciones de desarrollador> activar depuracion usb(desactivar cuando terminemos de usarlo)
+
+para crear una pantalla con el asistente(crea el enlace de codigo automatico)click derecho app>new>gallery> screen with activity(crea una nueva kltin+java y layout
+para launcher splash marcar launcher activity al crear
+
+
+layout_centerInparent= "true"
+Layout_AlignParentBottom
+layout_MarginBottom
+
+
+
+luego de crear nuestra estructura, para llamar dentro de nuestro .kt, hacemos .. ej:
+
+val input = findViewById<EditText>(R.id.InputPin)
+val boton = findViewById<Button>(R.id.BotonValidar)
+
+
+instalacion de firebase:
+
+en la esquina superior derecha vamos a enlazar el email
+luego vamos tools > firebase > autentificated > custom auth system
+seguimos los pasos
+https://firebase.google.com/docs/admin/setup?hl=es-419
+ir a la consola> selecionamos el proyecto > en la barra izquierda  entramos a autentificacion y comenzar 
+
+
+
+
+
+

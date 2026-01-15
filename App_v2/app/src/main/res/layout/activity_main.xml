@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bgmain">
+
+    <!-- Primer linear -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/BottonPantallaUno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="🐱‍🐉 Pantalla 1"
+                android:textSize="25sp"
+                android:backgroundTint="@color/red">
+            </Button>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Segundo linear -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/BottonPantallaDos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="✔✔Pantalla 2"
+                android:textSize="25sp"
+                android:backgroundTint="@color/green">
+            </Button>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Tercer linear -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/BottonPantallaTres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="😎Pantalla 3"
+                android:textSize="25sp"
+                android:backgroundTint="@color/blue">
+            </Button>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Cerrar sesion -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/BottonCerrarSesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Cerrar Sesión"
+                android:textSize="25sp"
+                android:backgroundTint="@color/blue">
+            </Button>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

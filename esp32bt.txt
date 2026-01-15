@@ -1,0 +1,13 @@
+========== DRIVER  CP210X===========
+
+administrador de dispositivos > actualizar controlador > seleccionamos la carpeta donde descomprimimos el archivo(no los archivos dentro)
+
+en arduino ide > tools > board > board manager >
+instalamos esp32 by espresiff systems
+
+
+
+=======================================================
+<uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"></uses-permission>
