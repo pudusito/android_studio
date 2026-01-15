@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/renoblur"
+    android:gravity="center_horizontal">
+
+    <!-- LOGO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/login"
+            android:scaleType="centerCrop"
+            android:contentDescription="Logo" />
+    </LinearLayout>
+
+
+    <!-- CREDENCIALES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="20dp">
+
+        <!-- Usuario -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario:"
+            android:textSize="25dp">
+
+        </TextView>
+        <EditText
+            android:id="@+id/inputUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese su usuario"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#808080"/>
+
+        <!-- Contraseña -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clave:"
+            android:textSize="25dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/inputClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="Ingrese su clave"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#808080"/>
+
+    </LinearLayout>
+
+
+    <!-- BOTÓN INICIAR SESIÓN -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/botonIniciarSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Iniciar Sesion"
+            android:textSize="25sp"
+            android:backgroundTint="@color/brown">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>
